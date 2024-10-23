@@ -1,4 +1,3 @@
-'use client'; // Add this line to indicate it's a client component
 
 import React from 'react';
 import Image from 'next/image';

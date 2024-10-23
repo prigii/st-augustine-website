@@ -5,13 +5,14 @@ import './styles/globals.css';  // Import global CSS (adjust based on your setup
 
 export const metadata = {
   title: 'St Augustine Catholic Parish, Juja',
-  description: 'Welcome to St Augustine Catholic Parish, Juja. Experience the warmth and community of our parish.',
+  description: 'Welcome to St. Augustine Catholic Parish, Juja. Experience the warmth and community of our parish.',
 };
 
 const Layout = ({ children }) => {
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.ico" />
         <title>St Augustine Catholic Parish & University Chaplaincy, Juja</title>
       </head>
       <body>

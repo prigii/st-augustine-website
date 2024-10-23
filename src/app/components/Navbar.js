@@ -46,8 +46,8 @@ const Navbar = () => {
     <nav className="bg-white shadow- p-4 text-black w-full top-0 z-50 flex flex-col md:flex-row justify-between items-center">
       <div className="flex items-center justify-between container mx-auto md:w-auto ml-20">
         <div className="flex items-center">
-          <Image src={logo} alt="St Augustine" className="h-10 w-10 mr-3" />
-          <div className="text-2xl font-bold leading-tight">
+          <Image href='/' src={logo} alt="St Augustine" className="h-10 w-10 mr-3" />
+          <div href='/' className="text-2xl font-bold leading-tight">
             St. Augustine Catholic Parish &<br />University Chaplaincy, Juja
           </div>
         </div>
