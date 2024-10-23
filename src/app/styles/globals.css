@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+ 
+.custom-underline {
+    position: relative;
+  }
+  
+  .custom-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Adjust position as needed */
+    width: 0;
+    height: 4px; /* Adjust thickness as needed */
+    background-color: #d68f3e; /* Tailwind yellow-800 */
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .custom-underline:hover::after,
+  .custom-underline.active::after {
+    width: 100%;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    padding-left: 20px; /* Adjust the value as needed */
+    padding-right: 20px; /* Adjust the value as needed */
+    margin-left: 2rem;
+    margin-right: 1rem;
+    
+  }
+  
