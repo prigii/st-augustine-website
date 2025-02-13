@@ -1,5 +1,6 @@
 // app/layout.js
 
+import Footer from './components/Footer';
 import Navbar from './components/Navbar';  // Adjust the import path based on your file structure
 import './styles/globals.css';  // Import global CSS (adjust based on your setup)
 
@@ -11,14 +12,11 @@ export const metadata = {
 const Layout = ({ children }) => {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <title>St Augustine Catholic Parish & University Chaplaincy, Juja</title>
-      </head>
-      <body>
+     <body>
         <Navbar />
         <main>{children}</main>
-        {/* You can add a footer here if you have one */}
+       
+        <Footer />
       </body>
     </html>
   );

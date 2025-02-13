@@ -2,17 +2,28 @@
 "use client";
 
 
-import Footer from './components/Footer';
 import Hero from './components/Hero';
+import About from './components/About';
+import MassSchedule from './components/MassSchedule';
+// import UpcomingEvents from './components/UpcomingEvents';
+import Sacraments from './components/Sacraments';
+// import Contact from './components/Contact';
+import Donate from './components/Donate';
 
 const HomePage = () => {
   return (
-    
-      <main>
-        <Hero />
-        {/* Add more sections as needed */}
-        <Footer />
-      </main>
+    <main>
+      <Hero />
+      <About />
+      <MassSchedule />
+      {/* <UpcomingEvents /> */}
+      <Sacraments />
+
+      {/* <Contact /> */}
+      <Donate />
+      {/* <Clergy /> */}
+
+    </main>
   );
 };
 

@@ -1,12 +1,13 @@
 // src/data/carouselImages.js
+'use client';
 
-import church from '../assets/church.jpg'
-import church3 from '../assets/church3.jpg'
-import church4 from '../assets/church4.jpg'
-import church5 from '../assets/church5.jpg'
-import church7 from '../assets/church7.jpg'
-import church8 from "../assets/church8.jpg";
-import chapel1 from "../assets/chapel1.jpg";
+import church from "../../../public/church.jpg";
+import church3 from "../../../public/church3.jpg";
+import church4 from "../../../public/church4.jpg";
+import church5 from "../../../public/church5.jpg";
+import church7 from "../../../public/church7.jpg";
+import church8 from "../../../public/church8.jpg";
+import chapel1 from "../../../public/chapel1.jpg";
 
 const parishCenter = [
   {

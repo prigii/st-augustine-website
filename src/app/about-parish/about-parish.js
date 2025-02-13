@@ -47,7 +47,7 @@ const AboutParish = () => {
             confessions covers the first 35 years of his life. It is from the confessions that Saint Augustine stated the
             famous passage:
             <blockquote className="italic pl-8 mt-4 font-bold">
-              "You have made us for yourself, O Lord, and our hearts are restless until they find rest in you."
+              &quot;You have made us for yourself, O Lord, and our hearts are restless until they find rest in you.&quot;
             </blockquote>
             <div className='text-yellow-500 font-bold p-4'>
               <p className='mt-4 '><a href="/saint-augustine" target='new' className='text-color-red-800 underline'>Learn more about St Augustine of Hippo here</a></p>

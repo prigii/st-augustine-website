@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '../public/staugustine.jpg'; // adjust the path based on your file structure
+import logo from "../../../public/staugustine.jpg"; // adjust the path based on your file structure
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

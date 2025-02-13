@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import churchImage from '../public/church-front.jpg'; // replace with your actual image path
+import churchImage from "../../../public/church-front.jpg"; // replace with your actual image path
 
 const Hero = () => {
   return (

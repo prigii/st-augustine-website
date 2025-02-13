@@ -1,6 +1,6 @@
 // src/components/Sacraments.js
 import React from 'react';
-import sacramentBg from '../assets/hostchalice.jpg'; // adjust the path based on your file structure
+import sacramentBg from "../../../public/hostchalice.jpg"; // adjust the path based on your file structure
 
 const sacramentsData = [
   {
@@ -48,7 +48,7 @@ const Sacraments = () => {
     <section
       id="sacraments"
       className="p-8"
-      style={{ backgroundImage: `url(${sacramentBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      style={{ backgroundImage: `url(${sacramentBg.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
       <h2 className="text-3xl font-bold mb-8 text-center text-white">Sacraments</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
