@@ -40,7 +40,7 @@ const MaryMotherOfGodMirimaini = () => {
           Fr. John Christopher Mohany, the then Fr. Incharge
           for St. Teresa Kalimoni oversaw the construction of
           the church and presided over its ceremonial
-          opening in a Holy Mass on 23'rd July 1995.
+          opening in a Holy Mass on 23rd July 1995.
         </p>
         <p className="mb-4">
           The outstation has very active ecclesial

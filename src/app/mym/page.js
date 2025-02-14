@@ -10,12 +10,12 @@ const MYM = () => {
           the ages of 14 years to 18 years, most of whom are
           in high school. We endeavor to foster a spirit of
           mission and service among young people through
-          our charism, "Fishers of men".
+          our charism, &quot;Fishers of men&quot;.
         </p>
         <p className="mb-4">
           We engage the youth in activities that promote spiritual growth,
           community involvement and global awareness of
-          the Catholic Church's mission. Members of MYM
+          the Catholic Church&apos;s mission. Members of MYM
           participate in various initiatives during school
           holidays such as educational programs, sports, debates, missionary
           outreach, volunteer projects, and cultural exchanges.

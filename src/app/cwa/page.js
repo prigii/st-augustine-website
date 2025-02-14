@@ -4,7 +4,7 @@ const CWA = () => {
   return (
     <div className="py-4 px-10">
       <div className="max-w-6xl mx-auto mt-12">
-        <h1 className="text-2xl font-bold mb-4 text-yellow-500">Catholic Women's Association (CWA)</h1>
+        <h1 className="text-2xl font-bold mb-4 text-yellow-500">Catholic Women&apos;s Association (CWA)</h1>
         <p className="mb-4">
           Catholic Women Association is a lay movement which brings Catholic
           Women closer to God and unites them as they participate in the

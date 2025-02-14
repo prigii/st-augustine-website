@@ -37,7 +37,7 @@ const MassSchedule = () => {
           <li className="mb-16 flex items-center">
             <div className="w-1/2 flex justify-end pr-8">
               <div className="text-right">
-                <h3 className="text-xl font-semibold">Holy Days' Masses</h3>
+                <h3 className="text-xl font-semibold">Holy Days&apos; Masses</h3>
                 <p>Check the parish bulletin for specific times.</p>
               </div>
             </div>

@@ -1,14 +1,16 @@
 import React from 'react';
-import bannerImage from '../assets/church.jpg'; // adjust the path based on your file structure
+import Image from 'next/image';
+import bannerImage from "../../../public/church.jpg"; // adjust the path based on your file structure
 
 const SpiritualResources = () => {
   return (
-    <div className="py-4 px-10">
-      <div className="relative w-full h-64 mb-4">
-        <img
+    <>
+      <div className="py-4 px-10">
+        <Image
           src={bannerImage}
           alt="Banner"
-          className="w-full h-full object-cover"
+          layout="fill"
+          objectFit="cover"
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <h1 className="text-white text-4xl font-bold">Spiritual Resources</h1>
@@ -40,8 +42,7 @@ const SpiritualResources = () => {
             <p><a href="https://www.praymorenovenas.com/" className='text-color-yellow-500 underline'>All Novena Prayers</a></p>
         </div>
       </div>
-
-    </div>
+    </>
   );
 };
 

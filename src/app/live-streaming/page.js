@@ -1,14 +1,16 @@
 import React from 'react';
-import bannerImage from '../assets/church.jpg'; // adjust the path based on your file structure
+import Image from 'next/image';
+import bannerImage from "../../../public/church.jpg"; // adjust the path based on your file structure
 
 const LiveStreaming = () => {
   return (
-    <div className="py-4 px-10">
-      <div className="relative w-full h-64">
-        <img
+    <>
+      <div className="py-4 px-10">
+        <Image
           src={bannerImage}
           alt="Banner"
-          className="w-full h-full object-cover"
+          layout="fill"
+          objectFit="cover"
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <h1 className="text-white text-4xl font-bold ">Live Streaming</h1>
@@ -31,8 +33,7 @@ const LiveStreaming = () => {
           ></iframe>
         </div>
       </div>
-      
-    </div>
+    </>
   );
 };
 
