@@ -2,27 +2,25 @@
 
 import React, { useState, useEffect } from "react";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-import churchImage from "../../../public/church.jpg";
+import churchImage from "/public/parish-center/church.jpg";
 
 const Footer = () => {
-  const [bgImage, setBgImage] = useState(null);
-  const [currentYear, setCurrentYear] = useState(null);
+    const [currentYear, setCurrentYear] = useState(null);
 
   useEffect(() => {
-    setBgImage(`url(${churchImage})`); // Set background image on the client
-    setCurrentYear(new Date().getFullYear()); // Set year dynamically on the client
+      setCurrentYear(new Date().getFullYear()); // Set year dynamically on the client
   }, []);
 
   return (
     <footer
-      className="bg-yellow-700 text-white p-8 w-full transition-transform duration-300"
+      className="text-white bg-yellow-500 p-8 w-full transition-transform duration-300"
       style={{
-        backgroundImage: bgImage,
+        backgroundImage: churchImage,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className="bg-gray-900 bg-opacity-50 rounded-lg">
+      <div className="bg-yellow-900 bg-opacity-50 rounded-lg">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold">Contact Us</h2>
           <table className="mx-auto my-4 text-left w-auto border-collapse border border-gray-400">

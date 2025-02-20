@@ -2,13 +2,13 @@
 "use client";
 
 
-import Hero from './components/Hero';
-import About from './components/About';
-import MassSchedule from './components/MassSchedule';
+import Hero from './home/Hero';
+import About from './home/About';
+import MassSchedule from './home/MassSchedule';
 // import UpcomingEvents from './components/UpcomingEvents';
-import Sacraments from './components/Sacraments';
+import Sacraments from './home/Sacraments';
 // import Contact from './components/Contact';
-import Donate from './components/Donate';
+import Donate from './home/Donate';
 
 const HomePage = () => {
   return (

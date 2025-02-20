@@ -2,7 +2,7 @@
 'use client';
 
 import React from "react";
-import ParishCenterCarousel from "../components/imageCarousel";
+import ParishCenterCarousel from "./ImageCarousel";
 
 const AboutParish = () => {
   return (
