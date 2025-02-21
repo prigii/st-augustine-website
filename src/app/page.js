@@ -22,7 +22,6 @@ const HomePage = () => {
       {/* <Contact /> */}
       <Donate />
       {/* <Clergy /> */}
-
     </main>
   );
 };

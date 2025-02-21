@@ -1,170 +1,90 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import logo from "/public/st-augustine/staugustine.jpg"; // adjust the path based on your file structure
+import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import logo from "/public/st-augustine/staugustine.jpg"; // Ensure path is correct
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isOutstationsOpen, setIsOutstationsOpen] = useState(false);
-  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
-
-  const dropdownRef = useRef(null);
-  const outstationsRef = useRef(null);
-  const aboutRef = useRef(null);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   const toggleMenu = () => setIsOpen(!isOpen);
-  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
-  const toggleAboutDropdown = () => setIsAboutDropdownOpen(!isAboutDropdownOpen);
+
+  const toggleDropdown = (menu) =>
+    setActiveDropdown(activeDropdown === menu ? null : menu);
+
   const closeMenu = () => {
     setIsOpen(false);
-    setIsDropdownOpen(false);
-    setIsAboutDropdownOpen(false);
+    setActiveDropdown(null);
   };
-  const toggleOutstations = () => setIsOutstationsOpen(!isOutstationsOpen);
-
-  const handleClickOutside = (event) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setIsDropdownOpen(false);
-    }
-    if (outstationsRef.current && !outstationsRef.current.contains(event.target)) {
-      setIsOutstationsOpen(false);
-    }
-    if (aboutRef.current && !aboutRef.current.contains(event.target)) {
-      setIsAboutDropdownOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
 
   return (
-    <nav className="bg-white shadow- p-4 text-black w-full top-0 z-50 flex flex-col md:flex-row justify-between items-center">
-      <div className="flex items-center justify-between container mx-auto md:w-auto ml-20">
-        <div className="flex items-center">
-          <Link href="/">
-            <Image src={logo} alt="St Augustine" className="h-10 w-10 mr-3" />
-          </Link>
-          <Link href='/'>
-            <div className="text-2xl font-bold leading-tight">
-              St. Augustine Catholic Parish &<br />
-              University Chaplaincy, Juja
-            </div>
-          </Link>
-        </div>
-        <button className="lg:hidden" onClick={toggleMenu}>
-          {isOpen ? (
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              ></path>
-            </svg>
-          ) : (
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              ></path>
-            </svg>
-          )}
-        </button>
+    <nav className="bg-white  p-4 w-full flex items-center justify-between">
+      {/* Left: Logo and Title */}
+      <div className="flex items-center space-x-4 ml-4">
+        <Link href="/" onClick={closeMenu}>
+          <Image
+            src={logo}
+            alt="St Augustine"
+            className="h-10 w-10 rounded-full"
+          />
+        </Link>
+        <Link href="/" className="text-2xl font-bold" onClick={closeMenu}>
+          St. Augustine Catholic Parish
+          <br />& University Chaplaincy, Juja
+        </Link>
       </div>
-      <ul
-        className={`md:flex justify-center space-x-6 ${
-          isOpen ? "block" : "hidden"
-        } md:block w-full md:w-auto mt-4 md:mt-0 mr-8`}
-      >
-        <li className="text-center md:text-left relative">
-          <Link
-            href="/"
-            className="block text-l font-semibold py-2 md:py-0 custom-underline"
-            onClick={closeMenu}
-          >
+
+      {/* Right: Navigation Links */}
+      <ul className="hidden md:flex space-x-6 mr-8">
+        <li>
+          <Link href="/" className="nav-link" onClick={closeMenu}>
             Home
           </Link>
         </li>
-        <li className="text-center md:text-left relative">
-          <button
-            onClick={toggleAboutDropdown}
-            className="block text-l font-semibold py-2 md:py-0 custom-underline"
+
+        {/* About Dropdown */}
+        <li className="relative">
+          <span
+            className="nav-link cursor-pointer"
+            onClick={() => toggleDropdown("about")}
           >
-            About
-          </button>
-          {isAboutDropdownOpen && (
-            <ul
-              ref={aboutRef}
-              className="absolute bg-white shadow-lg rounded-md mt-2 z-10 w-56"
-            >
+            About ▾
+          </span>
+          {activeDropdown === "about" && (
+            <ul className="dropdown-menu">
               <li>
-                <Link
-                  href="/about-parish"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
-                  onClick={closeMenu}
-                >
+                <Link href="/about-parish" onClick={closeMenu}>
                   About the Parish
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/saint-augustine"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
-                  onClick={closeMenu}
-                >
+                <Link href="/about-parish/saint-augustine" onClick={closeMenu}>
                   Saint Augustine
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/mass-readings-prayers"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
+                  href="/about-parish/mass-readings-prayers"
                   onClick={closeMenu}
                 >
                   Mass Readings & Prayers
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/live-streaming"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
-                  onClick={closeMenu}
-                >
+                <Link href="/about-parish/live-streaming" onClick={closeMenu}>
                   Live Streaming
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/vatican-news"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
-                  onClick={closeMenu}
-                >
+                <Link href="/about-parish/vatican-news" onClick={closeMenu}>
                   Vatican News
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/spiritual-resources"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
+                  href="/about-parish/spiritual-resources"
                   onClick={closeMenu}
                 >
                   Spiritual Resources
@@ -173,225 +93,201 @@ const Navbar = () => {
             </ul>
           )}
         </li>
-        <li className="text-center md:text-left relative">
-          <button
-            onClick={toggleOutstations}
-            className="block text-l font-semibold py-2 md:py-0 custom-underline"
+
+        {/* Outstations Dropdown */}
+        <li className="relative">
+          <span
+            className="nav-link cursor-pointer"
+            onClick={() => toggleDropdown("outstations")}
           >
-            Outstations
-          </button>
-          {isOutstationsOpen && (
-            <ul
-              ref={outstationsRef}
-              className="absolute bg-white shadow-lg rounded-md mt-2 z-10 w-56"
-            >
+            Outstations ▾
+          </span>
+          {activeDropdown === "outstations" && (
+            <ul className="dropdown-menu">
               <li>
-                <Link
-                  href="/outstations/first-mass"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
-                  onClick={() => {
-                    closeMenu();
-                    setIsOutstationsOpen(false);
-                  }}
-                >
+                <Link href="/outstations/first-mass" onClick={closeMenu}>
                   First Mass
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/outstations/second-mass"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
-                  onClick={() => {
-                    closeMenu();
-                    setIsOutstationsOpen(false);
-                  }}
-                >
+                <Link href="/outstations/second-mass" onClick={closeMenu}>
                   Second Mass
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/outstations/third-mass"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
-                  onClick={() => {
-                    closeMenu();
-                    setIsOutstationsOpen(false);
-                  }}
-                >
+                <Link href="/outstations/third-mass" onClick={closeMenu}>
                   Third Mass
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/outstations/st-paul-gachororo"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
-                  onClick={() => {
-                    closeMenu();
-                    setIsOutstationsOpen(false);
-                  }}
-                >
+                <Link href="/outstations/st-paul-gachororo" onClick={closeMenu}>
                   St Paul Gachororo
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/outstations/mary-mother-of-god-mirimaini"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
-                  onClick={() => {
-                    closeMenu();
-                    setIsOutstationsOpen(false);
-                  }}
-                >
+                <Link href="/outstations/mmg" onClick={closeMenu}>
                   Mary Mother of God Mirimaini
                 </Link>
               </li>
             </ul>
           )}
         </li>
-        <li className="text-center md:text-left relative">
-          <button
-            onClick={toggleDropdown}
-            className="block text-l font-semibold py-2 md:py-0 custom-underline"
+
+        {/* Groups Dropdown */}
+        <li className="relative">
+          <span
+            className="nav-link cursor-pointer"
+            onClick={() => toggleDropdown("groups")}
           >
-            Groups
-          </button>
-          {isDropdownOpen && (
-            <ul
-              ref={dropdownRef}
-              className="absolute bg-white shadow-lg rounded-md mt-2 z-10 w-56"
-            >
+            Groups ▾
+          </span>
+          {activeDropdown === "groups" && (
+            <ul className="dropdown-menu">
               <li>
-                <Link
-                  href="/groups/cma"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
-                  onClick={() => {
-                    closeMenu();
-                    setIsDropdownOpen(false);
-                  }}
-                >
+                <Link href="/groups/cma" onClick={closeMenu}>
                   CMA
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/groups/cwa"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
-                  onClick={() => {
-                    closeMenu();
-                    setIsDropdownOpen(false);
-                  }}
-                >
+                <Link href="/groups/cwa" onClick={closeMenu}>
                   CWA
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/groups/yca"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
-                  onClick={() => {
-                    closeMenu();
-                    setIsDropdownOpen(false);
-                  }}
-                >
+                <Link href="/groups/yca" onClick={closeMenu}>
                   YCA
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/groups/ysc"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
-                  onClick={() => {
-                    closeMenu();
-                    setIsDropdownOpen(false);
-                  }}
-                >
+                <Link href="/groups/ysc" onClick={closeMenu}>
                   YSC
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/groups/pmc"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
-                  onClick={() => {
-                    closeMenu();
-                    setIsDropdownOpen(false);
-                  }}
-                >
+                <Link href="/groups/pmc" onClick={closeMenu}>
                   PMC
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/groups/choir"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
-                  onClick={() => {
-                    closeMenu();
-                    setIsDropdownOpen(false);
-                  }}
-                >
+                <Link href="/groups/choir" onClick={closeMenu}>
                   Choir
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/groups/legion-of-mary"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
-                  onClick={() => {
-                    closeMenu();
-                    setIsDropdownOpen(false);
-                  }}
-                >
+                <Link href="/groups/legion-of-mary" onClick={closeMenu}>
                   Legion of Mary
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/groups/sacred-heart"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
-                  onClick={() => {
-                    closeMenu();
-                    setIsDropdownOpen(false);
-                  }}
-                >
+                <Link href="/groups/sacred-heart" onClick={closeMenu}>
                   Sacred Heart of Jesus
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/groups/self-help-group"
-                  className="block px-4 py-2 text-black hover:bg-gray-200"
-                  onClick={() => {
-                    closeMenu();
-                    setIsDropdownOpen(false);
-                  }}
-                >
+                <Link href="/groups/self-help-group" onClick={closeMenu}>
                   Self Help Group
                 </Link>
               </li>
             </ul>
           )}
         </li>
-        <li className="text-center md:text-left relative">
-          <Link
-            href="/contact"
-            className="block text-l font-semibold py-2 md:py-0 custom-underline"
-            onClick={closeMenu}
-          >
+
+        <li>
+          <Link href="/contact" className="nav-link" onClick={closeMenu}>
             Contact
           </Link>
         </li>
-        <li>
-          <button className="lg:ml-24 md:ml-0 sm:ml-0">
+
+        <li className="mt-2">
+          <Link
+            href="/donate"
+            className="bg-gray-900 text-white px-4 py-2 rounded hover:bg-yellow-700"
+            onClick={closeMenu}
+          >
+            Donate
+          </Link>
+        </li>
+      </ul>
+
+      {/* Mobile Menu Button */}
+      <button className="md:hidden mr-4" onClick={toggleMenu}>
+        {isOpen ? "✖" : "☰"}
+      </button>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <ul className="absolute top-16 right-4 bg-white shadow-lg p-4 rounded-md flex flex-col space-y-4 w-56">
+          <li>
+            <Link href="/" onClick={closeMenu}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <span
+              className="cursor-pointer"
+              onClick={() => toggleDropdown("about")}
+            >
+              About ▾
+            </span>
+            {activeDropdown === "about" && (
+              <ul className="dropdown-menu-mobile">
+                <li>
+                  <Link href="/about-parish" onClick={closeMenu}>
+                    About the Parish
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/about-parish/saint-augustine"
+                    onClick={closeMenu}
+                  >
+                    Saint Augustine
+                  </Link>
+                  <li>
+                    <Link
+                      href="/about-parish/live-streaming"
+                      onClick={closeMenu}
+                    >
+                      Live Streaming
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/about-parish/mass-readings-prayers"
+                      onClick={closeMenu}
+                    >
+                      Mass Readings & Prayers
+                    </Link>
+                  </li>
+                  <li>
+                  <Link
+                    href="/about-parish/spiritual-resources"
+                    onClick={closeMenu}
+                  >
+                    Spiritual Resources
+                  </Link>
+                  </li>
+
+                </li>
+              </ul>
+            )}
+          </li>
+          <li>
+            <Link href="/contact" onClick={closeMenu}>
+              Contact
+            </Link>
+          </li>
+          <li>
             <Link
               href="/donate"
-              className="bg-gray-900 text-white block text-l font-semibold px-4 py-4 rounded md:py-2 hover:bg-yellow-700"
+              className="bg-gray-900 text-white px-4 py-2 rounded hover:bg-yellow-700"
               onClick={closeMenu}
             >
               Donate
             </Link>
-          </button>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      )}
     </nav>
   );
 };

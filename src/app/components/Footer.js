@@ -1,100 +1,128 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-import churchImage from "/public/parish-center/church.jpg";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaTwitter,
+  FaYoutube,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaClock,
+} from "react-icons/fa";
 
 const Footer = () => {
-    const [currentYear, setCurrentYear] = useState(null);
+  const [currentYear, setCurrentYear] = useState(null);
 
   useEffect(() => {
-      setCurrentYear(new Date().getFullYear()); // Set year dynamically on the client
+    setCurrentYear(new Date().getFullYear()); // Set year dynamically on the client
   }, []);
 
   return (
-    <footer
-      className="text-white bg-yellow-500 p-8 w-full transition-transform duration-300"
-      style={{
-        backgroundImage: churchImage,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="bg-yellow-900 bg-opacity-50 rounded-lg">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold">Contact Us</h2>
-          <table className="mx-auto my-4 text-left w-auto border-collapse border border-gray-400">
-            <tbody>
-              <tr>
-                <td className="pr-4 border border-gray-400">Address:</td>
-                <td className="border border-gray-400">
-                  Gachororo Road, Juja, Kenya
-                </td>
-              </tr>
-              <tr>
-                <td className="pr-4 border border-gray-400">Phone:</td>
-                <td className="border border-gray-400">+254 712 345 678</td>
-              </tr>
-              <tr>
-                <td className="pr-4 border border-gray-400">Email:</td>
-                <td className="border border-gray-400">
-                  info@staugustinejuja.org
-                </td>
-              </tr>
-              <tr>
-                <td className="pr-4 border border-gray-400">Office Hours:</td>
-                <td className="border border-gray-400">
-                  Monday - Friday, 8 AM - 4 PM
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <p className="mt-4">
-            We&apos;re here to assist you. Feel free to reach out with any
-            questions or to schedule a visit.
+    <footer className="bg-yellow-900 text-white py-10 px-6 md:px-20">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Contact Info */}
+        <div>
+          <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
+          <p className="flex items-center gap-2">
+            <FaMapMarkerAlt className="text-yellow-400" />
+            Gachororo Road, Juja, Kenya
           </p>
-          <div className="flex justify-center space-x-4 mt-4">
+          <p className="flex items-center gap-2 mt-2">
+            <FaPhoneAlt className="text-yellow-400" />
+            +254 712 345 678
+          </p>
+          <p className="flex items-center gap-2 mt-2">
+            <FaEnvelope className="text-yellow-400" />
+            info@staugustinejuja.org
+          </p>
+          <p className="flex items-center gap-2 mt-2">
+            <FaClock className="text-yellow-400" />
+            Office Hours: Mon - Fri, 8 AM - 4 PM
+          </p>
+        </div>
+
+        {/* Quick Links */}
+        <div>
+          <h2 className="text-2xl font-bold mb-4">Quick Links</h2>
+          <ul className="space-y-2">
+            <li>
+              <a href="/about-parish" className="hover:text-yellow-400">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="/" className="hover:text-yellow-400">
+                Outstations
+              </a>
+            </li>
+            <li>
+              <a href="/donate" className="hover:text-yellow-400">
+                Donate
+              </a>
+            </li>
+            <li>
+              <a href="/contact" className="hover:text-yellow-400">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Social Media */}
+        <div className="text-center md:text-left">
+          <h2 className="text-2xl font-bold mb-4">Follow Us</h2>
+          <div className="flex justify-center md:justify-start gap-4">
             <a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
+              className="p-2 bg-white text-yellow-900 rounded-full hover:bg-yellow-400"
             >
-              <FaTwitter size={24} />
+              <FaTwitter size={20} />
             </a>
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
+              className="p-2 bg-white text-yellow-900 rounded-full hover:bg-yellow-400"
             >
-              <FaFacebook size={24} />
+              <FaFacebook size={20} />
             </a>
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
+              className="p-2 bg-white text-yellow-900 rounded-full hover:bg-yellow-400"
             >
-              <FaInstagram size={24} />
+              <FaInstagram size={20} />
             </a>
             <a
               href="https://youtube.com"
               target="_blank"
               rel="noopener noreferrer"
+              className="p-2 bg-white text-yellow-900 rounded-full hover:bg-yellow-400"
             >
-              <FaYoutube size={24} />
+              <FaYoutube size={20} />
             </a>
           </div>
-
-          <div className="text-center mt-8 font-semibold">
-            <p>
-              &copy; {currentYear ? currentYear : "Loading..."} St Augustine
-              Catholic Parish & University Chaplaincy, JKUAT, Juja. All rights
-              reserved.
-            </p>
-          </div>
-          <div className="text-center mt-4 text-sm">
-            <p>Designed and Developed by Seneca Systems Ltd.</p>
-          </div>
         </div>
+      </div>
+
+      {/* Copyright */}
+      <div className="text-center mt-8 border-t border-yellow-600 pt-4">
+        <p>
+          &copy; {currentYear ? currentYear : "Loading..."} St. Augustine
+          Catholic Parish & University Chaplaincy, JKUAT, Juja. All rights
+          reserved.
+        </p>
+        <p className="text-sm mt-2">
+          Designed and Developed by{" "}
+          <span className="font-semibold text-yellow-400">
+            Seneca Systems Ltd.
+          </span>
+        </p>
       </div>
     </footer>
   );
