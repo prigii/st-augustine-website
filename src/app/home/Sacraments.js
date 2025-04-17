@@ -6,7 +6,7 @@ const sacramentsData = [
   {
     number: 1,
     title: 'Baptism',
-    description: 'Celebrate the beginning of your child\'s faith journey with us.'
+    description: 'Celebrate the beginning of your faith journey with us.'
   },
   {
     number: 2,
@@ -16,7 +16,7 @@ const sacramentsData = [
   {
     number: 3,
     title: 'Holy Eucharist',
-    description: 'Participate in the holy banquet of our Lord Jesus Christ through the sacrament of the Eucharist.'
+    description: 'Partake in the holy banquet of our Lord Jesus Christ through the sacrament of the Eucharist.'
     
   },
   {
@@ -39,7 +39,7 @@ const sacramentsData = [
   {
     number: 7,
     title: 'Holy Orders',
-    description: 'For the harvest is plenty but the labourers are few in the vineyard of the Lord. Come and be guided how to join the religious and priesthood.'
+    description: '"For the harvest is plenty but the labourers are few in the vineyard of the Lord." Come and be guided how to join the religious and priesthood.'
   }
 ];
 

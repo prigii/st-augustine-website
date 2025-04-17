@@ -31,11 +31,11 @@ const Footer = () => {
           </p>
           <p className="flex items-center gap-2 mt-2">
             <FaPhoneAlt className="text-yellow-400" />
-            +254 712 345 678
+            +254 796 185 539
           </p>
           <p className="flex items-center gap-2 mt-2">
             <FaEnvelope className="text-yellow-400" />
-            info@staugustinejuja.org
+            staugustinecatholicjuja@gmail.com
           </p>
           <p className="flex items-center gap-2 mt-2">
             <FaClock className="text-yellow-400" />

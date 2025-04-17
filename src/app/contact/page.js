@@ -54,7 +54,7 @@ const Contact = () => {
             <FaPhone className="text-yellow-500 text-3xl" />
             <div>
               <h3 className="text-lg font-semibold">Phone</h3>
-              <p>+254 712 345 678</p>
+              <p>+254 796 185 539</p>
             </div>
           </div>
 
@@ -63,7 +63,7 @@ const Contact = () => {
             <FaEnvelope className="text-yellow-500 text-3xl" />
             <div>
               <h3 className="text-lg font-semibold">Email</h3>
-              <p>info@staugustinejuja.org</p>
+              <p>staugustinecatholicjuja@gmail.com</p>
             </div>
           </div>
 
@@ -136,8 +136,8 @@ const Contact = () => {
               <strong>Office Hours:</strong> Mon - Fri 8am - 4pm
             </p>
             <p>
-              <strong>Priest&apos;s Office Hours:</strong> Wed after morning Masses
-              up to 12pm
+              <strong>Priest&apos;s Office Hours:</strong> Wed after morning
+              Masses up to 12pm
             </p>
           </div>
 

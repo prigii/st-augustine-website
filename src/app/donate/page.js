@@ -4,6 +4,7 @@ import mpesa from "/public/logos/mpesa-logo1.png";
 import caritas from "/public/logos/caritas-logo.png";
 import kcb from "/public/logos/kcb-logo.png";
 import ParishCenterCarousel from "../about-parish/ImageCarousel";
+import Link from "next/link";
 
 const Donate = () => {
   return (
@@ -17,8 +18,8 @@ const Donate = () => {
           Donate
         </h1>
         <p className="mb-6 text-center">
-          Thank you for considering a donation to St. Augustine Catholic Parish
-          Juja. Your generous contributions help us continue our mission and
+          Thank you for considering a donation to St. Augustine Catholic Parish,
+          Juja. Your generous contributions helps us continue our mission and
           support our community.
         </p>
 
@@ -37,8 +38,12 @@ const Donate = () => {
               className="mx-auto mb-2"
             />
             <h3 className="text-lg font-semibold">MPESA</h3>
-            <p>Paybill Number: 522533</p>
-            <p>Account Number: 888888</p>
+            <p>
+              Paybill Number: <strong>522533</strong>
+            </p>
+            <p>
+              Account Number: <strong>5990784#Your Name</strong>
+            </p>
           </div>
 
           <div className="bg-white shadow-lg rounded-lg p-5 text-center">
@@ -50,7 +55,9 @@ const Donate = () => {
               className="mx-auto mb-2"
             />
             <h3 className="text-lg font-semibold">KCB Bank</h3>
-            <p>Direct Transfer to KCB Account Number: XXXXXXX</p>
+            <p>
+              Direct Transfer to KCB Account Number: <strong>1184524726</strong>
+            </p>
           </div>
 
           <div className="bg-white shadow-lg rounded-lg p-5 text-center">
@@ -62,27 +69,35 @@ const Donate = () => {
               className="mx-auto mb-2"
             />
             <h3 className="text-lg font-semibold">Caritas Microfinance Bank</h3>
-            <p>Paybill Number: 8998990</p>
-            <p>Account Number: 308600</p>
+            <p>
+              Paybill Number: <strong>8998990</strong>
+            </p>
+            <p>
+              Account Number: <strong>308600</strong>
+            </p>
           </div>
         </div>
 
         {/* Contact Details */}
         <div className="mt-10 bg-gray-100 p-6 rounded-lg text-center shadow-md">
-          <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
+          <h2 className="text-2xl font-semibold mb-4">Contact</h2>
           <p className="mb-2">
-            📍 <strong>Physical Address:</strong> St. Augustine Catholic Parish & University Chaplaincy,
-            Juja. Gachororo Street, Opposite JKUAT.
-          </p>
-          <p className="mb-2">
-            📬 <strong>Postal Address:</strong> P.O. Box 386, Kalimoni, Juja, Kenya
+            📍 <strong>Physical Address:</strong> St. Augustine Catholic Parish
+            & University Chaplaincy, Juja. Gachororo Street, Opposite JKUAT.
           </p>
           <p className="mb-2">
-            📞 <strong>Phone:</strong> +254 712 345 678
+            📬 <strong>Postal Address:</strong> P.O. Box 386, Kalimoni, Juja,
+            Kenya
           </p>
-          <p>
-            ✉️ <strong>Email:</strong> info@staugustinejuja.org
+          <p className="mb-2">
+            📞 <strong>Phone:</strong> +254 796 185 539
           </p>
+          <p className="mb-2">
+            ✉️ <strong>Email:</strong> staugustinecatholicjuja@gmail.com
+          </p>
+          <Link href="/contact" className="text-yellow-600 hover:underline">
+            Check our Contact page for directions
+          </Link>
         </div>
       </div>
     </section>

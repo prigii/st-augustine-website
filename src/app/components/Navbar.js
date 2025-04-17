@@ -260,14 +260,110 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li>
+                    <Link
+                      href="/about-parish/spiritual-resources"
+                      onClick={closeMenu}
+                    >
+                      Spiritual Resources
+                    </Link>
+                  </li>
+                </li>
+              </ul>
+            )}
+          </li>
+          <li>
+            <span
+              className="cursor-pointer"
+              onClick={() => toggleDropdown("outstations")}
+            >
+              Outstations ▾
+            </span>
+            {activeDropdown === "outstations" && (
+              <ul className="dropdown-menu-mobile">
+                <li>
+                  <Link href="/outstations/first-mass" onClick={closeMenu}>
+                    First Mass
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/outstations/second-mass" onClick={closeMenu}>
+                    Second Mass
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/outstations/third-mass" onClick={closeMenu}>
+                    Third Mass
+                  </Link>
+                </li>
+                <li>
                   <Link
-                    href="/about-parish/spiritual-resources"
+                    href="/outstations/st-paul-gachororo"
                     onClick={closeMenu}
                   >
-                    Spiritual Resources
+                    St Paul Gachororo
                   </Link>
-                  </li>
-
+                </li>
+                <li>
+                  <Link href="/outstations/mmg" onClick={closeMenu}>
+                    Mary Mother of God Mirimaini
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </li>
+          <li>
+            <span
+              className="cursor-pointer"
+              onClick={() => toggleDropdown("groups")}
+            >
+              Groups ▾
+            </span>
+            {activeDropdown === "groups" && (
+              <ul className="dropdown-menu-mobile">
+                <li>
+                  <Link href="/groups/cma" onClick={closeMenu}>
+                    CMA
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/groups/cwa" onClick={closeMenu}>
+                    CWA
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/groups/yca" onClick={closeMenu}>
+                    YCA
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/groups/ysc" onClick={closeMenu}>
+                    YSC
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/groups/pmc" onClick={closeMenu}>
+                    PMC
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/groups/choir" onClick={closeMenu}>
+                    Choir
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/groups/legion-of-mary" onClick={closeMenu}>
+                    Legion of Mary
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/groups/sacred-heart" onClick={closeMenu}>
+                    Sacred Heart of Jesus
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/groups/self-help-group" onClick={closeMenu}>
+                    Self Help Group
+                  </Link>
                 </li>
               </ul>
             )}
