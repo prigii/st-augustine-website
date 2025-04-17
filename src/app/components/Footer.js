@@ -118,7 +118,7 @@ const Footer = () => {
           reserved.
         </p>
         <p className="text-sm mt-2">
-          Designed and Developed by{" "}
+          Designed and Developed with ❤️ by{" "}
           <span className="font-semibold text-yellow-400">
             Seneca Systems Ltd.
           </span>
