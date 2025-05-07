@@ -8,7 +8,7 @@ const AboutParish = () => {
   return (
     <>
       <section id="about" className="py-4 px-10">
-        <h1 className="text-4xl font-bold mb-8 px-10 text-center">About Us</h1>
+        <h1 className="text-4xl font-bold mb-8 px-10 text-center text-yellow-600">About Us</h1>
         <ParishCenterCarousel />
         <div className="max-w-6xl mx-auto mt-12">
           <h2 className="text-3xl text-center font-bold mb-4 mt-8 text-yellow-500">
@@ -45,9 +45,14 @@ const AboutParish = () => {
             to learn more about our faith. The pastoral activities and the
             administration of the Parish are under the guidance of Rev. Fr.
             Patrick Ndung’u, Rev. Fr. (Prof.) Lawrence Njoroge, Rev. Fr. Bernard
-            Njuguna and the Pastoral Parish Council (PPC). Further the Pastoral
-            ministry is supported by the generosity of the visiting priests in
-            the name of Frs. Eric Muceeri and Chris Letikerich.
+            Njuguna and the Pastoral Parish Council (PPC).
+          </p>
+          <p className="mb-4">
+            The parish has been honoured with the services of the following Priests
+            who have served in the Parish since its inception: Fr. Valerio Valeri, 
+            Fr. Francis Kaigwa, Fr. Francis Kiarie, Fr. Raphael Kibugi, Fr. Lawrence Njoroge, 
+            Fr. Francis Mbuthia, Fr. John Wamuti and Fr. Eric Rugano.
+
           </p>
           <p className="mb-4">
             The Parish is under the patronage of St. Augustine of Hippo, Bishop

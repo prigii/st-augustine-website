@@ -216,7 +216,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <ul className="absolute top-16 right-4 bg-white shadow-lg p-4 rounded-md flex flex-col space-y-4 w-56">
+        <ul className="absolute top-16 right-4 bg-white shadow-lg p-4 rounded-md flex flex-col space-y-4 w-56 font-bold">
           <li>
             <Link href="/" onClick={closeMenu}>
               Home
@@ -224,13 +224,13 @@ const Navbar = () => {
           </li>
           <li>
             <span
-              className="cursor-pointer"
+              className="cursor-pointer font-bold"
               onClick={() => toggleDropdown("about")}
             >
               About ▾
             </span>
             {activeDropdown === "about" && (
-              <ul className="dropdown-menu-mobile">
+              <ul className="dropdown-menu-mobile font-bold">
                 <li>
                   <Link href="/about-parish" onClick={closeMenu}>
                     About the Parish
@@ -273,7 +273,7 @@ const Navbar = () => {
           </li>
           <li>
             <span
-              className="cursor-pointer"
+              className="cursor-pointer font-bold"
               onClick={() => toggleDropdown("outstations")}
             >
               Outstations ▾
@@ -313,7 +313,7 @@ const Navbar = () => {
           </li>
           <li>
             <span
-              className="cursor-pointer"
+              className="cursor-pointer font-bold"
               onClick={() => toggleDropdown("groups")}
             >
               Groups ▾

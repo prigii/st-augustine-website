@@ -39,6 +39,7 @@ const ThirdMass = () => {
           <li>St Daniel Comboni SCC</li>
           <li>St Margaret of Scotland SCC</li>
           <li>St Albert SCC</li>
+          <li>St Martin of Tours SCC</li>
         </ol>
         Active ecclesial groups are CMA, CWA, PMC, MYM, Senior Youth, YCA and
         Choir.
